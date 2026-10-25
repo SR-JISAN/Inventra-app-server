@@ -1,0 +1,26 @@
+model Users {
+    id String @id @default(uuid())
+    name String @db.VarChar(50)
+    email String @unique
+    role  UsersRole @default(SHOP_OWNER)
+    status UserStatus @default(ACTIVE)
+    authProvider  AuthProvider @default(CREDENTIALS)
+    password String?
+    googleId String? @unique
+    profilePicture String? 
+    verified Boolean @default(false)
+    imageURL           String?      @default("")
+    imagePublicId      String?      @default("")
+    needPasswordChange Boolean      @default(false)
+    isDeleted Boolean @default(false)
+    deletedAT DateTime?
+    blockedAt DateTime?
+    profile UsersProfile?
+    createdAt DateTime @default(now())
+    updatedAt DateTime
+
+@@index([role, status])
+@@index([email, status])
+@@index([isDeleted])
+@@map("users")
+}

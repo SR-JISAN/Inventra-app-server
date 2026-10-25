@@ -10,4 +10,5 @@ export default {
   port: process.env.PORT!,
   app_url: process.env.APP_URL!,
   local_app_url: process.env.LOCAL_APP_URL!,
+  data_base_url: process.env.DATABASE_URL!,
 };
