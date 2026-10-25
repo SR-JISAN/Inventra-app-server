@@ -1,9 +1,29 @@
+# Dependencies
 node_modules/
-dist/
-build/
+
+# Environment
 .env
 .env.*
 !.env.example
+
+# Build
+dist/
 coverage/
 
-/generated/prisma
+# Prisma Generated Client
+/generated/
+src/generated/
+
+# IDE
+.vscode/
+
+# Deployment
+.vercel/
+
+# AI Tool Files
+.agents/
+.claude/
+.windsurf/
+
+# Logs
+*.log
